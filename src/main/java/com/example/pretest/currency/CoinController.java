@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.pretest.currency.dto.CoinDeskNewDto;
+
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -50,7 +53,7 @@ public class CoinController {
 		return coinService.getApiCoindesk();
 	}
 	@GetMapping("/getCoindesk2")
-	public CoinDeskDto getCoindeskNew() {
+	public Mono<CoinDeskNewDto> getCoindeskNew() {
 		return coinService.getCoinDeskNew();
 	}
 }
